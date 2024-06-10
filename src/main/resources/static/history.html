@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" ng-app="history">
+<head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/profile.css" type="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="js/history.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="HistoryController">
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <a class="d-flex align-items-center link-body-emphasis text-decoration-none" href="store.html">
+            <h2 class="col-md-6">Интернет Магазин</h2>
+        </a>
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="profile.html">Профиль</a>
+            <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="Cart.html">Корзина</a>
+            <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="logIn.html">Выйти</a>
+        </nav>
+    </div>
+    <div class="main-body">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <!--              <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">-->
+                            <img alt="Admin" src="pages/person-circle.svg" width="110">
+                            <div class="mt-3">
+                                <h4>{{User.name}}</h4>
+                                <p class="text-secondary mb-1">{{User.email}}</p>
+                                <hr class="my-4">
+                                <button class="btn btn-primary" ng-click="openProfile()">Профиль</button>
+                            </div>
+                        </div>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <br/>
+                        <h3>История покупок</h3>
+                        <table cellpadding="0" cellspacing="0" class="table table-hover">
+                            <thead>
+                            <tr>
+                                <td>Название</td>
+                                <td>Категория</td>
+                                <td>Цена</td>
+                                <td>Количество</td>
+                                <td>Дата покупки</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in History">
+                                <td>{{item.product.title}}</td>
+                                <td>{{item.product.category.name}}</td>
+                                <td>{{item.product.price}}</td>
+                                <td>{{item.count}}</td>
+                                <td>{{item.date}}</td>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

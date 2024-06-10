@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="register">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="css/sing-in.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="js/register.js"></script>
+</head>
+<body>
+<div class="login-page" ng-controller="RegisterController">
+  <form class="form" ng-submit="saveUser()">
+      <input type="text" placeholder="name" ng-model="NewUser.name"/>
+      <input type="password" placeholder="password" ng-model="NewUser.password"/>
+      <input type="text" placeholder="email address" ng-model="NewUser.email"/>
+      <button class="btn btn-success" type="submit">create</button>
+      <p class="message">Already registered? <a href="logIn.html">Sign In</a></p>
+  </form>
+</div>
+
+</body>
+</html>
